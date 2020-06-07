@@ -20,10 +20,9 @@ class CSV extends MY_Controller {
 	{
         $this->load->view('admin/csv/upload_csv');
 	}
-    public function upload_file()
+  public function upload_file()
 	{
-	   if(_is_user_login($this)){
-	       
+	     
             $data["error"] = "";
             if(isset($_REQUEST["addcatg"]))
             {
@@ -98,13 +97,14 @@ class CSV extends MY_Controller {
             }
             
             
-                    
+            echo "Uploaded file successfully";
+            echo '<a href="'.site_url("admin/products").'">BACK</a>';
+        exit();      
             }
             
 	   	        
-        }
-        echo "Uploaded file successfully".'<a href="'.site_url("admin/products").'>BACK</a>';
-        exit();
+        
+        
             
 	}
 	
